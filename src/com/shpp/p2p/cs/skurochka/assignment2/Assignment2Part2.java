@@ -8,7 +8,7 @@ import java.awt.*;
 
 public class Assignment2Part2 extends WindowProgram {
     // The constant in which the radius of a circle is stored.
-    private final double RADIUS_OF_CIRCLE = 100;
+    private static final double RADIUS_OF_CIRCLE = 100;
 
     // The method of launching the program.
     public void run() {

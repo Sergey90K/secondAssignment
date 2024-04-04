@@ -49,13 +49,15 @@ public class Assignment2Part1 extends TextProgram {
         double discriminator = b * b - 4 * a * c;
         if (discriminator < 0) {
             resultString = "There are no real roots";
-        } else if (discriminator > 0) {
+        } else if (discriminator > 0 && !(a == 0)) {
             double x1 = (-b + Math.sqrt(discriminator)) / (2 * a);
             double x2 = (-b - Math.sqrt(discriminator)) / (2 * a);
             resultString = "There are two roots: " + x1 + " and " + x2;
-        } else {
+        } else if (discriminator == 0 && !(a == 0)) {
             double x = -b / (2 * a);
             resultString = "There is one root: " + x;
+        } else {
+            resultString = "You have a problem with the data you entered. You have entered an invalid a.";
         }
         return resultString;
     }
