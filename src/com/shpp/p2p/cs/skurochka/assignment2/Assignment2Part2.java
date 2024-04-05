@@ -7,22 +7,30 @@ import com.shpp.cs.a.graphics.WindowProgram;
 import java.awt.*;
 
 public class Assignment2Part2 extends WindowProgram {
-    // The constant in which the radius of a circle is stored.
-    private static final double RADIUS_OF_CIRCLE = 100;
+    // The constant in which the radius of a circle is stored. Available for testing purposes only.
+    // private static final double RADIUS_OF_CIRCLE = 45;
+
+    // The line for setting the window width is provided for testing purposes only.
+    // public static final int APPLICATION_WIDTH = 1000;
+
+    // The window height setting line is provided for testing purposes only.
+    //public static final int APPLICATION_HEIGHT = 1000;
 
     // The method of launching the program.
     public void run() {
+        // The circle size is calculated from the window measurements.
+        double radiusOfCircle = calculateRadiusCircle();
         // A method that draws four circles. Accepts the radius of a circle as a parameter.
-        drawAllCircles(RADIUS_OF_CIRCLE);
+        drawAllCircles(radiusOfCircle);
         // A method that draws a rectangle. Accepts the radius of a circle as a parameter.
-        drawRectangle(RADIUS_OF_CIRCLE);
+        drawRectangle(radiusOfCircle);
     }
 
     /*
-    * A method that draws four circles. Accepts the radius of a circle as a parameter.
-    * The method calls methods ( drawFirstCircle(), drawSecondCircle(), drawThirdCircle(),
-    * drawForthCircle() ) in turn that draw four color-filled circles.
-    */
+     * A method that draws four circles. Accepts the radius of a circle as a parameter.
+     * The method calls methods ( drawFirstCircle(), drawSecondCircle(), drawThirdCircle(),
+     * drawForthCircle() ) in turn that draw four color-filled circles.
+     */
     private void drawAllCircles(double radius) {
         drawFirstCircle(radius);
         drawSecondCircle(radius);
@@ -112,5 +120,30 @@ public class Assignment2Part2 extends WindowProgram {
      */
     private double getDiameter(double x) {
         return x * 2;
+    }
+
+    /*
+     * The circle size is calculated from the window measurements.
+     * The method includes the main window sizes, and depending on the actual window size,
+     * the window value is returned, which is also stored in the method for each size.
+     * The program returns a value of type int.
+     */
+    private int calculateRadiusCircle() {
+        int windowMaxSizeWidth = 900, windowMaxSizeHeight = 900, circleMaxSize = 100;
+        int windowDefaultSizeWidth = 700, windowDefaultSizeHeight = 400, circleDefaultSize = 75;
+        int windowMidlSizeWidth = 300, windowMidlSizeHeight = 300, circleMidSize = 55;
+        int circleMinSize = 45;
+        int resultCircleRadius;
+        int windowWidth = getWidth(), windowHeight = getHeight();
+        if (windowMaxSizeWidth < windowWidth && windowMaxSizeHeight < windowHeight) {
+            resultCircleRadius = circleMaxSize;
+        } else if (windowDefaultSizeWidth < windowWidth && windowDefaultSizeHeight < windowHeight) {
+            resultCircleRadius = circleDefaultSize;
+        } else if (windowMidlSizeWidth < windowWidth && windowMidlSizeHeight < windowHeight) {
+            resultCircleRadius = circleMidSize;
+        } else {
+            resultCircleRadius = circleMinSize;
+        }
+        return resultCircleRadius;
     }
 }
