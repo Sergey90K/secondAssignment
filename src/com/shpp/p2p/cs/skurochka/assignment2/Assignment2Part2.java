@@ -8,13 +8,20 @@ import java.awt.*;
 
 public class Assignment2Part2 extends WindowProgram {
     // The constant in which the radius of a circle is stored. Available for testing purposes only.
-    // private static final double RADIUS_OF_CIRCLE = 45;
+    private static final double RADIUS_OF_CIRCLE = 0;
 
     // The line for setting the window width is provided for testing purposes only.
-    // public static final int APPLICATION_WIDTH = 1000;
-
+    public static final int APPLICATION_WIDTH = 500;
     // The window height setting line is provided for testing purposes only.
-    //public static final int APPLICATION_HEIGHT = 1000;
+    public static final int APPLICATION_HEIGHT = 500;
+
+    //Constant window sizes for all sizes and the corresponding size of the circle radius.
+    //The window dimensions, width, height and radius of the circle for all sizes except the minimum size are available.
+    // For the minimum, only the circle radius is available.
+    int WINDOW_MAX_SIZE_WIDTH = 900, WINDOW_MAX_SIZE_HEIGHT = 900, CIRCLE_MAX_SIZE = 100;
+    int WINDOW_DEFAULT_SIZE_WIDTH = 700, WINDOW_DEFAULT_SIZE_HEIGHT = 400, CIRCLE_DEFAULT_SIZE = 75;
+    int WINDOW_MIDL_SIZE_WIDTH = 300, WINDOW_MIDL_SIZE_HEIGHT = 300, CIRCLE_MIDL_SIZE = 55;
+    int CIRCLE_MIN_SIZE = 45;
 
     // The method of launching the program.
     public void run() {
@@ -43,7 +50,7 @@ public class Assignment2Part2 extends WindowProgram {
      * In the middle, a new object of type GRect is created, in which the radius is set,
      * which is used as the starting position for building a rectangle, the service function getWidth()/getHeight()
      * is used as the size, from which the diameters of the circle are subtracted.
-     * Then the shape fill is turned on to allow you to add a fill color.
+     * Then the rectangle fill is turned on to allow you to add a fill color.
      * The next step is to set the desired color.
      * This is then added to the screen composition.
      */
@@ -124,25 +131,23 @@ public class Assignment2Part2 extends WindowProgram {
 
     /*
      * The circle size is calculated from the window measurements.
-     * The method includes the main window sizes, and depending on the actual window size,
+     * The method using the main window sizes, and depending on the actual window size,
      * the window value is returned, which is also stored in the method for each size.
      * The program returns a value of type int.
      */
-    private int calculateRadiusCircle() {
-        int windowMaxSizeWidth = 900, windowMaxSizeHeight = 900, circleMaxSize = 100;
-        int windowDefaultSizeWidth = 700, windowDefaultSizeHeight = 400, circleDefaultSize = 75;
-        int windowMidlSizeWidth = 300, windowMidlSizeHeight = 300, circleMidSize = 55;
-        int circleMinSize = 45;
-        int resultCircleRadius;
+    private double calculateRadiusCircle() {
+        double resultCircleRadius;
         int windowWidth = getWidth(), windowHeight = getHeight();
-        if (windowMaxSizeWidth < windowWidth && windowMaxSizeHeight < windowHeight) {
-            resultCircleRadius = circleMaxSize;
-        } else if (windowDefaultSizeWidth < windowWidth && windowDefaultSizeHeight < windowHeight) {
-            resultCircleRadius = circleDefaultSize;
-        } else if (windowMidlSizeWidth < windowWidth && windowMidlSizeHeight < windowHeight) {
-            resultCircleRadius = circleMidSize;
+        if (RADIUS_OF_CIRCLE > 0) {
+            resultCircleRadius = RADIUS_OF_CIRCLE;
+        } else if (WINDOW_MAX_SIZE_WIDTH < windowWidth && WINDOW_MAX_SIZE_HEIGHT < windowHeight) {
+            resultCircleRadius = CIRCLE_MAX_SIZE;
+        } else if (WINDOW_DEFAULT_SIZE_WIDTH < windowWidth && WINDOW_DEFAULT_SIZE_HEIGHT < windowHeight) {
+            resultCircleRadius = CIRCLE_DEFAULT_SIZE;
+        } else if (WINDOW_MIDL_SIZE_WIDTH < windowWidth && WINDOW_MIDL_SIZE_HEIGHT < windowHeight) {
+            resultCircleRadius = CIRCLE_MIDL_SIZE;
         } else {
-            resultCircleRadius = circleMinSize;
+            resultCircleRadius = CIRCLE_MIN_SIZE;
         }
         return resultCircleRadius;
     }
