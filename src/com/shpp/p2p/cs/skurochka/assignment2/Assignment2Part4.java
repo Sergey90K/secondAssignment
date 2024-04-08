@@ -12,8 +12,8 @@ public class Assignment2Part4 extends WindowProgram {
     private static final Color CARDINAL_BLACK = new Color(9, 9, 9);
 
     // The width and height of the flag. You can change it for testing.
-    private static final double FLAG_WIDTH = 400;
-    private static final double FLAG_HEIGHT = 300;
+    private static final double FLAG_WIDTH = 350;
+    private static final double FLAG_HEIGHT = 250;
 
     // Default flag width and height.
     private static final double STANDARD_FLAG_WIDTH = 350;
