@@ -3,6 +3,7 @@ package com.shpp.p2p.cs.skurochka.assignment2;
 import acm.graphics.GOval;
 import acm.graphics.GRect;
 import com.shpp.cs.a.graphics.WindowProgram;
+
 import java.awt.*;
 
 public class Assignment2Part2 extends WindowProgram {
