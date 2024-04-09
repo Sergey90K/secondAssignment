@@ -31,8 +31,8 @@ public class Assignment2Part5 extends WindowProgram {
     private void drawSetOfBox() {
         double widthAllBox = (NUM_COLS * BOX_SIZE) + (NUM_COLS * BOX_SPACING);
         double heightAllBox = (NUM_ROWS * BOX_SIZE) + (NUM_ROWS * BOX_SPACING);
-        double startPositionForX = getWidth() / 2 - widthAllBox / 2;
-        double startPositionForY = getHeight() / 2 - heightAllBox / 2;
+        double startPositionForX = getWidth() / 2.0 - widthAllBox / 2.0;
+        double startPositionForY = getHeight() / 2.0 - heightAllBox / 2.0;
         double sizeOneBoxPlusSpacing = BOX_SPACING + BOX_SIZE;
         for (int i = 0; i < NUM_COLS; i++) {
             for (int j = 0; j < NUM_ROWS; j++) {

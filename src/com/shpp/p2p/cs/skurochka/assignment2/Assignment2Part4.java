@@ -20,7 +20,7 @@ public class Assignment2Part4 extends WindowProgram {
     private static final double STANDARD_FLAG_HEIGHT = 250;
 
     // Number of parts of the flag. No change required for testing.
-    private static final int NUMBER_OF_PARTS_FLAG = 3;
+    private static final double NUMBER_OF_PARTS_FLAG = 3.0;
 
     //The text that is written in the inscription under the flag. A change is available for testing.
     private static final String LABEL_STRING = "Flag of Belgium";
