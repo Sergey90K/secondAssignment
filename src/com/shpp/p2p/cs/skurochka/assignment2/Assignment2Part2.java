@@ -3,7 +3,6 @@ package com.shpp.p2p.cs.skurochka.assignment2;
 import acm.graphics.GOval;
 import acm.graphics.GRect;
 import com.shpp.cs.a.graphics.WindowProgram;
-
 import java.awt.*;
 
 public class Assignment2Part2 extends WindowProgram {
@@ -17,7 +16,7 @@ public class Assignment2Part2 extends WindowProgram {
 
     //Constant window sizes for all sizes and the corresponding size of the circle radius.
     //The window dimensions, width, height and radius of the circle for all sizes except the minimum size are available.
-    // For the minimum, only the circle radius is available.
+    // For the minimum, only the circle radius is available. Changing parameters for testing is not available.
     int WINDOW_MAX_SIZE_WIDTH = 900, WINDOW_MAX_SIZE_HEIGHT = 900, CIRCLE_MAX_SIZE = 100;
     int WINDOW_DEFAULT_SIZE_WIDTH = 700, WINDOW_DEFAULT_SIZE_HEIGHT = 400, CIRCLE_DEFAULT_SIZE = 75;
     int WINDOW_MIDL_SIZE_WIDTH = 300, WINDOW_MIDL_SIZE_HEIGHT = 300, CIRCLE_MIDL_SIZE = 55;
@@ -72,7 +71,7 @@ public class Assignment2Part2 extends WindowProgram {
     }
 
     /*
-      Method for drawing the second circle. Accepts the radius of the circle as a parameter.
+     * Method for drawing the second circle. Accepts the radius of the circle as a parameter.
      * The method includes the parameters of the starting point for calculating the circle.
      * Then the method for drawing a circle is called drawOneCircle(), to which all the necessary parameters are passed.
      */
@@ -126,7 +125,7 @@ public class Assignment2Part2 extends WindowProgram {
      * Returns the radius multiplied by two.
      */
     private double getDiameter(double x) {
-        return x * 2;
+        return x * 2.0;
     }
 
     /*

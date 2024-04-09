@@ -3,11 +3,10 @@ package com.shpp.p2p.cs.skurochka.assignment2;
 import acm.graphics.GLabel;
 import acm.graphics.GRect;
 import com.shpp.cs.a.graphics.WindowProgram;
-
 import java.awt.*;
 
 public class Assignment2Part4 extends WindowProgram {
-    // Constants of all colors needed to build a flag.
+    // Constants of all colors needed to build a flag. Available for testing.
     private static final Color CARDINAL_RED = new Color(227, 13, 49);
     private static final Color CARDINAL_YELLOW = new Color(250, 250, 0);
     private static final Color CARDINAL_BLACK = new Color(9, 9, 9);
@@ -16,20 +15,20 @@ public class Assignment2Part4 extends WindowProgram {
     private static final double FLAG_WIDTH = 350;
     private static final double FLAG_HEIGHT = 250;
 
-    // Default flag width and height.
+    // Default flag width and height. No change required for testing.
     private static final double STANDARD_FLAG_WIDTH = 350;
     private static final double STANDARD_FLAG_HEIGHT = 250;
 
-    // Number of parts of the flag
+    // Number of parts of the flag. No change required for testing.
     private static final int NUMBER_OF_PARTS_FLAG = 3;
 
-    //The text that is written in the inscription under the flag
+    //The text that is written in the inscription under the flag. A change is available for testing.
     private static final String LABEL_STRING = "Flag of Belgium";
 
-    // The font used for the label.
+    // The font used for the label. A change is available for testing.
     private static final Font FONT_FOR_LABEL = new Font("Serif", Font.BOLD, 20);
 
-    // Indentation for flags whose size does not fit the window size.
+    // Indentation for flags whose size does not fit the window size. No change required for testing.
     private static final int INDENTATION_FOR_LARGE_FLAG = 30;
 
     // Method of launching the program
@@ -52,9 +51,9 @@ public class Assignment2Part4 extends WindowProgram {
      * which passes the calculated parameters of width, height, and axis dimensions, as well as the color.
      * */
     private void drawFirstPartOfFlag(double widthFlag, double heightFlag) {
-        drawRectangle((getWidth() / 2) - (widthFlag / NUMBER_OF_PARTS_FLAG / 2) + (widthFlag / NUMBER_OF_PARTS_FLAG),
-                (getHeight() / 2) - (heightFlag / 2),
-                widthFlag / 3,
+        drawRectangle((getWidth() / 2.0) - (widthFlag / NUMBER_OF_PARTS_FLAG / 2.0) + (widthFlag / NUMBER_OF_PARTS_FLAG),
+                (getHeight() / 2.0) - (heightFlag / 2.0),
+                widthFlag / NUMBER_OF_PARTS_FLAG,
                 heightFlag,
                 CARDINAL_RED);
     }
@@ -65,9 +64,9 @@ public class Assignment2Part4 extends WindowProgram {
      * which passes the calculated width, height, and axis dimensions and color parameters, respectively.
      * */
     private void drawSecondPartOfFlag(double widthFlag, double heightFlag) {
-        drawRectangle((getWidth() / 2) - (widthFlag / NUMBER_OF_PARTS_FLAG / 2) - (widthFlag / NUMBER_OF_PARTS_FLAG),
-                (getHeight() / 2) - (heightFlag / 2),
-                widthFlag / 3,
+        drawRectangle((getWidth() / 2.0) - (widthFlag / NUMBER_OF_PARTS_FLAG / 2.0) - (widthFlag / NUMBER_OF_PARTS_FLAG),
+                (getHeight() / 2.0) - (heightFlag / 2.0),
+                widthFlag / NUMBER_OF_PARTS_FLAG,
                 heightFlag, CARDINAL_BLACK);
     }
 
@@ -77,8 +76,8 @@ public class Assignment2Part4 extends WindowProgram {
      * which passes the calculated width, height, and axis dimensions and color parameters, respectively.
      * */
     private void drawThirdPartOfFlag(double widthFlag, double heightFlag) {
-        drawRectangle((getWidth() / 2) - (widthFlag / NUMBER_OF_PARTS_FLAG / 2),
-                (getHeight() / 2) - (heightFlag / 2),
+        drawRectangle((getWidth() / 2.0) - (widthFlag / NUMBER_OF_PARTS_FLAG / 2.0),
+                (getHeight() / 2.0) - (heightFlag / 2.0),
                 widthFlag / NUMBER_OF_PARTS_FLAG,
                 heightFlag,
                 CARDINAL_YELLOW);

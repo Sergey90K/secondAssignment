@@ -19,14 +19,14 @@ public class Assignment2Part6 extends WindowProgram {
     }
 
     /*
-    * The method of drawing a caterpillar.
-    * The method includes X and Y positions to start building each segment of the caterpillar.
-    * Next, the offset position of each subsequent caterpillar segment is calculated.
-    * Then a loop is started and repeated the number of times it takes to build a given caterpillar size.
-    * The loop checks for step parity and calculates the position change according to the formulas.
-    * Then the construction of the caterpillar segment is completed.
-    * At the end of the cycle, the X and Y positions are reset to zero each time.
-    * */
+     * The method of drawing a caterpillar.
+     * The method includes X and Y positions to start building each segment of the caterpillar.
+     * Next, the offset position of each subsequent caterpillar segment is calculated.
+     * Then a loop is started and repeated the number of times it takes to build a given caterpillar size.
+     * The loop checks for step parity and calculates the position change according to the formulas.
+     * Then the construction of the caterpillar segment is completed.
+     * At the end of the cycle, the X and Y positions are reset to zero each time.
+     * */
     private void drawCaterpillar() {
         double positionX = 0, positionY = 0;
         double shiftThePositionOfTheWheel = DIAMETER_OF_THE_CIRCLE * COEFFICIENT_OF_OFFSET_OF_THE_CIRCLE_POSITION;
@@ -44,8 +44,18 @@ public class Assignment2Part6 extends WindowProgram {
     }
 
     /*
-    *
-    * */
+     * The method of drawing a single circle.
+     * The method takes four parameters, the first parameter is the X position,
+     * the second parameter is the Y position, the third parameter is the diameter in the X coordinate direction,
+     * and the last parameter is the diameter in the Y coordinate direction.
+     * Inside the method, an object of type GOval is created,
+     * into which the input parameters of the starting positions are passed,
+     * and the diameters calculated from the input diameters are passed accordingly.
+     * Then the shape fill is turned on to allow you to add a fill color.
+     * The next step is to set the desired color.
+     * The next step is to set the fill color.
+     * This is then added to the screen composition.
+     * */
     private void drawOneCircle(double startX, double startY, double diameterX, double diameterY) {
         GOval circle = new GOval(startX, startY, diameterX, diameterY);
         circle.setFilled(true);

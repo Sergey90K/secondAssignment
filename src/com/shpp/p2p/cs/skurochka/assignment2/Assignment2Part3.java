@@ -72,7 +72,7 @@ public class Assignment2Part3 extends WindowProgram {
      * and the last parameter is the diameter in the Y coordinate direction.
      * Inside the method, an object of type GOval is created,
      * into which the input parameters of the starting positions are passed,
-     * and the diameters calculated from the input radii are passed accordingly.
+     * and the diameters calculated from the input diameters are passed accordingly.
      * Then the shape fill is turned on to allow you to add a fill color.
      * The next step is to set the desired color.
      * This is then added to the screen composition.
