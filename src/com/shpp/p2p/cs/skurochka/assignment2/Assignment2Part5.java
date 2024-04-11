@@ -7,7 +7,7 @@ import java.awt.*;
 public class Assignment2Part5 extends WindowProgram {
     /* The number of rows and columns in the grid, respectively. */
     private static final int NUM_ROWS = 5;
-    private static final int NUM_COLS = 6;
+    private static final int NUM_COLS = 12;
 
     /* The width and height of each box. */
     private static final double BOX_SIZE = 40;
@@ -29,8 +29,8 @@ public class Assignment2Part5 extends WindowProgram {
      * Then a loop within a loop is started to search the X and Y positions and draw these boxes accordingly.
      * */
     private void drawSetOfBox() {
-        double widthAllBox = (NUM_COLS * BOX_SIZE) + (NUM_COLS * BOX_SPACING);
-        double heightAllBox = (NUM_ROWS * BOX_SIZE) + (NUM_ROWS * BOX_SPACING);
+        double widthAllBox = (NUM_COLS * BOX_SIZE) + ((NUM_COLS - 1) * BOX_SPACING);
+        double heightAllBox = (NUM_ROWS * BOX_SIZE) + ((NUM_ROWS - 1) * BOX_SPACING);
         double startPositionForX = getWidth() / 2.0 - widthAllBox / 2.0;
         double startPositionForY = getHeight() / 2.0 - heightAllBox / 2.0;
         double sizeOneBoxPlusSpacing = BOX_SPACING + BOX_SIZE;
