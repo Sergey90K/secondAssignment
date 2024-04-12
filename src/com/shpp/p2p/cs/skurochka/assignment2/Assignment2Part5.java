@@ -1,5 +1,6 @@
 package com.shpp.p2p.cs.skurochka.assignment2;
 
+import acm.graphics.GLine;
 import acm.graphics.GRect;
 import com.shpp.cs.a.graphics.WindowProgram;
 import java.awt.*;
@@ -14,11 +15,15 @@ public class Assignment2Part5 extends WindowProgram {
 
     /* The horizontal and vertical spacing between the boxes. */
     private static final double BOX_SPACING = 10;
+    // Variable to enable the test mode.
+    private static final boolean TEST_MODE = false;
 
     // The method of launching the program.
     public void run() {
         // The method of drawing a set of boxes.
         drawSetOfBox();
+        // A method that draws lines to test a program.
+        drawTestLine(TEST_MODE);
     }
 
     /*
@@ -56,5 +61,30 @@ public class Assignment2Part5 extends WindowProgram {
         rect.setFilled(true);
         rect.setColor(Color.BLACK);
         add(rect);
+    }
+
+    /*
+     * A method for drawing test lines.
+     * Accepts a boolean value as a parameter.
+     * If the parameter is true, two lines are drawn, one horizontally and the other vertically.
+     * */
+    private void drawTestLine(boolean testMode) {
+        if (testMode) {
+            drawOneLine(getWidth() / 2.0, 0.0, getWidth() / 2.0, getHeight());
+            drawOneLine(0.0, getHeight() / 2.0, getWidth(), getHeight() / 2.0);
+        }
+    }
+
+    /*
+     * A method that has a single line.
+     * The method accepts starting and finishing parameters X and Y.
+     * In the middle, a GLine object is created, into which the input parameters of the method are passed,
+     * and then set to red.
+     * The final step is to add the line to the screen composition.
+     * */
+    private void drawOneLine(double startX, double startY, double finishX, double finishY) {
+        GLine gLine = new GLine(startX, startY, finishX, finishY);
+        gLine.setColor(Color.RED);
+        add(gLine);
     }
 }
